@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Absensi Siswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Form Login -->
+        <div id="loginForm" class="login-form">
+            <h2>Login Guru</h2>
+            <form id="formLogin">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Masukkan username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Masukkan password">
+                </div>
+                
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Konten Absensi (awalnya disembunyikan) -->
+        <div id="absensiContent" style="display:none;">
+            <header>
+                <h1>Sistem Absensi Siswa</h1>
+                <p>SMK Negeri 1 Contoh</p>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </header>
+
+            <main>
+                <section class="absensi-form">
+                    <h2>Form Absensi</h2>
+                    <form id="formAbsensi">
+                        <div class="form-group">
+                            <label for="nis">NIS (Nomor Induk Siswa)</label>
+                            <input type="text" id="nis" name="nis" required placeholder="Masukkan NIS">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="kelas">Kelas</label>
+                            <select id="kelas" name="kelas" required>
+                                <option value="">Pilih Kelas</option>
+                                <option value="X">X (Sepuluh)</option>
+                                <option value="XI">XI (Sebelas)</option>
+                                <option value="XII">XII (Dua Belas)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="jurusan">Jurusan</label>
+                            <select id="jurusan" name="jurusan" required>
+                                <option value="">Pilih Jurusan</option>
+                                <option value="TKJ">Teknik Komputer dan Jaringan</option>
+                                <option value="MM">Multimedia</option>
+                                <option value="RPL">Rekayasa Perangkat Lunak</option>
+                                <option value="TKRO">Teknik Kendaraan Ringan Otomotif</option>
+                                <option value="TBSM">Teknik Bisnis Sepeda Motor</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="kehadiran">Status Kehadiran</label>
+                            <select id="kehadiran" name="kehadiran" required>
+                                <option value="">Pilih Status</option>
+                                <option value="hadir">Hadir</option>
+                                <option value="izin">Izin</option>
+                                <option value="sakit">Sakit</option>
+                                <option value="alpa">Alpa/Tanpa Keterangan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="keterangan">Keterangan (Jika Izin/Sakit)</label>
+                            <textarea id="keterangan" name="keterangan" rows="3" placeholder="Masukkan keterangan jika izin/sakit"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">Submit Absensi</button>
+                    </form>
+                </section>
+
+                <section class="absensi-data">
+                    <h2>Data Absensi Hari Ini</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Cari berdasarkan NIS atau Nama...">
+                        <button id="searchBtn">Cari</button>
+                    </div>
+                    <table id="tabelAbsensi">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>NIS</th>
+                                <th>Nama</th>
+                                <th>Kelas</th>
+                                <th>Jurusan</th>
+                                <th>Status</th>
+                                <th>Waktu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data akan dimasukkan melalui JavaScript -->
+                        </tbody>
+                        <!-- Tambahkan di HTML sebelum tabel -->
+<div class="filter-group">
+    <label for="filterDate">Filter Tanggal:</label>
+    <input type="date" id="filterDate">
+    <button id="resetFilter">Reset</button>
+</div>
+                    </table>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2023 Sistem Absensi Siswa - SMK Negeri 1 Contoh</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
